@@ -1,13 +1,13 @@
 ### Display books by categories
 
-collect data about authors
+#### collect data about authors
 * gender
 * location
 * books
 * deceased
 * age
 
-catagorize books
+#### catagorize books
 * fiction/non-fiction
 * country
 * date written
