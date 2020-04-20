@@ -1,19 +1,19 @@
 ### Display books by categories
 
 collect data about authors
-    - gender
-    - location
-    - books
-    - deceased
-    - age
+..* gender
+..* location
+..* books
+..* deceased
+..* age
 
 catagorize books
-    - fiction/non-fiction
-    - country
-    - date written
-    - pages
-    - genre
-    - banned books
+..* fiction/non-fiction
+..* country
+..* date written
+..* pages
+..* genre
+..* banned books
 
 API or webscraper?
 
