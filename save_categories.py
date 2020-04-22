@@ -45,5 +45,5 @@ print(indexPages)
 # return result
 # data = result.json()
 
-with open("test0.json", "w", encoding="utf8") as outfile:
+with open("./json/test0.json", "w", encoding="utf8") as outfile:
      json.dump(indexPages, outfile)

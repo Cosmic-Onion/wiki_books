@@ -87,5 +87,5 @@ for links in root.xpath("//div[@class='CategoryTreeItem']"):
 #print(rootPages)
 
 
-with open("test6.json", "w", encoding="utf8") as outfile:
+with open("./json/categories.json", "w", encoding="utf8") as outfile:
     json.dump(group, outfile)
