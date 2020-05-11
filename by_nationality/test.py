@@ -12,6 +12,7 @@ def addNationalities(page):
         if "See:" in item.text_content():
             for link in item.iterlinks():
                 linkList.append(baseURL + link[2])
+                addNationalities(baseURL + link[2])
 
 req = requests.Session()
 
@@ -32,11 +33,11 @@ for nationality in writers:
        linkList.append(nextPage)
        addNationalities(nextPage)
 
-'''
-with open("linkList0.txt","w") as txtFile:
+
+with open("linkList1.txt","w") as txtFile:
     for item in linkList:
         txtFile.write("%s\n" % item)
-'''
+
 writerDict = {}
 
 for link in linkList:
@@ -45,7 +46,15 @@ for link in linkList:
 
     #TODO: add if statement to check if this even exists
 
-    for writer in lupine.xpath("/html/body/div[3]/div[3]/div[4]/div/div/ul/li"):
+    body_1 = lupine.xpath("/html/body/div[3]/div[3]/div[4]/div/ul/li")
+    body_2 = lupine.xpath("/html/body/div[3]/div[3]/div[4]/div/div/ul/li")
+
+    if len(body_2) > len(body_1):
+        body = body_2
+    else:
+        body = body_1
+
+    for writer in body:             
         writerLinks = writer.xpath("a")
         if writerLinks == []:
             continue
@@ -53,6 +62,7 @@ for link in linkList:
             writerName = writerLinks[0].text_content()
             for writerPage in writer.iterlinks():
                 writerURL = writerPage[2]
+                #check if writerURL contains list, if so add to linklist
                 break
 
             temp = {writerName : writerURL}
@@ -61,5 +71,5 @@ for link in linkList:
     writerDict[link] = []
     writerDict[link].append(writerList)
 
-with open("../json/author5.json", "w", encoding="utf8") as outfile:
+with open("../json/author8.json", "w", encoding="utf8") as outfile:
     json.dump(writerDict, outfile)
