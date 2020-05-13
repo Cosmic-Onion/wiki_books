@@ -15,11 +15,4 @@
 * genre
 * banned books
 
-API or webscraper?
-
-~~Webscraper to get links for each individual page, then api to get info from page.~~
-
-use API to get data about categories, then iterate through these until at page
-
-C = category
-P = Pages
+libgen has sql database dumps that can be parsed for information
